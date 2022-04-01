@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: broder-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --theme-color: coral;
+    --primary-color: #333;
+    --secondary-color: #ddd;
+    --warning-color: rgb(226, 230, 13);
+}
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--theme-color);
+}
+h1 {
+    margin-bottom: 20px;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    line-height: 1.6;
+}
+input[type="radio"], label {
+    cursor: pointer;
+}
+label {
+    padding-left: 40px;
+    position: relative;
+    z-index: 2;
+}
+.quizContainer {
+    background-color: coral;
+    width: 800px;
+    max-width: 80%;
+    padding: 25px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+}
+.question {
+    font-size: 20px;
+}
+.answers {
+    margin: 15px 0;
+}
+.nextButton {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--theme-color);
+    cursor: pointer;
+    transition: .2s ease-out color background-color;
+    margin: 0 auto;
+}
+.nextButton:hover {
+    color: var(--theme-color);
+    background-color: var(--secondary-color);
+}
+.hide {
+    display: none;
+}
+.feedback, .result {
+    font-size: smaller;
+    margin: 15px auto;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.warning {
+    background-color: var(--warning-color);
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+/* Custom radio button */
+li {
+    position: relative;
+}
+.checkmark {
+position: absolute;
+top: 50%;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: var(--secondary-color);
+transform: translateY(-50%);
+border-radius: 50%;
+}
+
+li:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+li input:checked ~ .checkmark {
+//background-color: #2196F3;
+}
+
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+li input:checked ~ .checkmark:after {
+display: block;
+}
+
+.checkmark:after {
+top: 50%;
+left: 5px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+transform: translateY(-50%);
+background: var(--theme-color);
+}
